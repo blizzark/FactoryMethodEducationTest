@@ -1,7 +1,12 @@
-﻿class Program
+﻿using FactoryMethodEducationTest.CreateTransportFactory;
+using System.Transactions;
+
+class Program
 {
     static void Main()
     {
-        Console.WriteLine("Тест гита");
+        var auto = new Mazda3Fabric().CreateTransport("Mazda");
+
+        Console.WriteLine(auto.Firm);
     }
 }
