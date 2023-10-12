@@ -10,7 +10,11 @@ namespace FactoryMethodEducationTest.CreateTransportFactory
     internal class CreateGolfVW : TransportFactory
     {
 
-        public async override Task<ITransport> CreateTransport(BodyEnum body, EquipmentEnum equipment) => new GolfVW(body, equipment);
+        public async override Task<ITransport> CreateTransport(BodyEnum body, EquipmentEnum equipment)
+        {
+            await Task.Delay(1000);
+            return new GolfVW(body, equipment);
+        }
 
 
     }

@@ -46,16 +46,21 @@ class Program
         Task<ITransport> transport;
         switch (Console.ReadLine()?.ToLower()) {
             case "п":
+                Console.WriteLine("\t>> Начинаем сборку <<");
+                Thread.Sleep(1000);
                 bodyEnum = BodyEnum.Sedan;
                 transport = new CreatePoloVW().CreateTransport(bodyEnum, equipmentEnum);
  
                 break;
             case "г":
+                Console.WriteLine("\t>> Начинаем предпродажную подготовку <<");
+                Thread.Sleep(1000);
                 bodyEnum = BodyEnum.Hatchback;
                 transport = new CreateGolfVW().CreateTransport(bodyEnum, equipmentEnum);
            
                 break;
             case "т":
+                Console.WriteLine("\t>> Ищем автомобиль <<");
                 bodyEnum = BodyEnum.SUV;
                 transport = new CreateTiguanVW().CreateTransport(bodyEnum, equipmentEnum);
             
@@ -65,7 +70,9 @@ class Program
                 return;                
 
         }
-        await transport; // чисто просто так, оно не работает :з 
+     
+        Console.WriteLine("\t>> Подождите <<");
+       await transport; // чисто просто так, оно не работает :з 
         Console.WriteLine($">> Поздравляем с выбором {transport.Result.Firm} {transport.Result.Model}<<\n" +
             $">> {transport.Result.Description} << \n" +
             $">> Описание комплектации: {transport.Result.equipmentType.Description} <<\n" +

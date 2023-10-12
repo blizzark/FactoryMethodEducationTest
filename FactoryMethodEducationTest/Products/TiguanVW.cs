@@ -23,7 +23,7 @@ namespace FactoryMethodEducationTest.Products
             Price = 800000;
             bodyType = new BodyType(body);
             equipmentType = new Equipment(equipment);
-
+            Thread.Sleep(1000);
         }
     }
 }
