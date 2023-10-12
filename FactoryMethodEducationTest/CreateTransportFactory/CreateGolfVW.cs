@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 
 namespace FactoryMethodEducationTest.CreateTransportFactory
 {
-    internal abstract class TransportFactory
+    internal class CreateGolfVW : TransportFactory
     {
 
-        public abstract Task<ITransport> CreateTransport(BodyEnum body, EquipmentEnum equipment);
+        public async override Task<ITransport> CreateTransport(BodyEnum body, EquipmentEnum equipment) => new GolfVW(body, equipment);
+
+
     }
 }

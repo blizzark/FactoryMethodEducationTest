@@ -5,7 +5,7 @@ namespace FactoryMethodEducationTest.CreateTransportFactory
     internal class CreatePoloVW : TransportFactory
     {
 
-        public override ITransport CreateTransport(BodyEnum body, EquipmentEnum equipment) => new PoloVW(body, equipment)
+        public async override Task<ITransport> CreateTransport(BodyEnum body, EquipmentEnum equipment) => new PoloVW(body, equipment)
         {
             Firm = "Volkswagen",
             Model = "Polo",
