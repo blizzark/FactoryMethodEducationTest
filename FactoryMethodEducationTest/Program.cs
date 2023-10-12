@@ -70,9 +70,10 @@ class Program
                 return;                
 
         }
-     
+      
         Console.WriteLine("\t>> Подождите <<");
-       await transport; // чисто просто так, оно не работает :з 
+        Thread.Sleep(1000); // этот будет "пропущен", т.к. выполнится "одновременно" с Task.Delay(1000)
+        await transport; // чисто просто так, оно не работает :з 
         Console.WriteLine($">> Поздравляем с выбором {transport.Result.Firm} {transport.Result.Model}<<\n" +
             $">> {transport.Result.Description} << \n" +
             $">> Описание комплектации: {transport.Result.equipmentType.Description} <<\n" +
