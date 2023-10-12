@@ -10,6 +10,6 @@ namespace FactoryMethodEducationTest.CreateTransportFactory
     internal abstract class TransportFactory
     {
 
-        public abstract ITransport CreateTransport(string firm);
+        public abstract ITransport CreateTransport(BodyEnum body, EquipmentEnum equipment);
     }
 }

@@ -1,13 +1,15 @@
 ﻿using FactoryMethodEducationTest.CreateTransportFactory;
+using FactoryMethodEducationTest.Products;
 using System.Transactions;
-using FactoryMethodEducationTest.Mazda;
+
+
 
 class Program
 {
     static void Main()
     {
-        var auto = new Mazda().CreateTransport("Mazda");
+        var VW = new CreatePoloVW().CreateTransport(BodyEnum.Sedan, EquipmentEnum.Comfort);
 
-        Console.WriteLine(auto.Firm);
+        Console.WriteLine(VW.Firm);
     }
 }
